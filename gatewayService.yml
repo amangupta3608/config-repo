@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: gatewayService
+
+  cloud:
+    gateway:
+      routes:
+        - id: authService
+          uri: http://localhost:8080
+          predicates:
+            - Path=/auth/**
+
+        - id: projectService
+          uri: http://localhost:8086
+          predicates:
+            - Path=/project/**
+
+server:
+  port: 8084
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8083/eureka

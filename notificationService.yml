@@ -1,0 +1,23 @@
+
+spring:
+  application:
+    name: notificationService
+
+  server:
+    port: 8085
+
+  eureka:
+    client:
+      service-url:
+        defaultZone: http://localhost:8083/eureka
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: amangupta0213@gmail.com
+    password: GuptaKrishna@3#666
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
